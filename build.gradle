@@ -1,0 +1,33 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+  id "com.github.hierynomus.license" version "0.15.0"
+  id "java"
+  id "com.xebialabs.xldp" version "1.0.5"
+  id 'nebula.release' version '11.0.0'
+}
+
+if (!project.hasProperty('release.scope')) {
+  project.ext['release.scope'] = 'patch'
+}
+
+if (!project.hasProperty('release.useLastTag')) {
+  project.ext['release.useLastTag'] = true
+}
+
+processResources.configure {
+  filesNotMatching(['**/*.png','**/*.svg']) {
+    filter ReplaceTokens, tokens: [
+      'project.version': version.toString(),
+      'project.name'   : rootProject.name
+    ]
+  }
+  dependsOn ':angular-app:copyDist'
+}
+
+license {
+  header rootProject.file('License.md')
+  strictCheck true
+  ext.year = Calendar.getInstance().get(Calendar.YEAR)
+  ext.name = 'XEBIALABS'
+}

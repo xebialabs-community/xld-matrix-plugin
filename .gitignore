@@ -1,0 +1,8 @@
+.gradle
+.DS_Store
+build
+temp
+supervisord.*
+angular-app/build
+angular-app/node_modules
+xebialabs

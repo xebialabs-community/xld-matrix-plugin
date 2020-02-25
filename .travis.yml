@@ -1,0 +1,7 @@
+language: java
+
+install:
+  - angular-app/npm install
+
+script:
+  - ./gradlew clean build

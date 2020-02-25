@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2020 XEBIALABS
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+  <type type="matrix.applicationSet"
+        extends="udm.Configuration"
+        description="List of applications for the Matrix extension">
+      <property name="applications"
+                kind="list_of_ci"
+                referenced-type="udm.Application"
+                required="true"
+                label="Applications"
+                description="List of applications in a set"/>
+  </type>
+
+  <type type="matrix.category"
+      extends="udm.Configuration"
+      label="Category"
+      description="Category for the Matrix Extension">
+  </type>
+  
+  <type type="matrix.configuration"
+        extends="udm.Configuration"
+        description="Configuration for the Matrix extension">
+        <property name="categories"
+                  description="Categories of environments"
+                  kind="list_of_ci"
+                  referenced-type="matrix.category" />
+  </type>
+
+  <type-modification type="udm.Environment">
+    <property name="matrixcategory" label="Category" kind="ci" referenced-type="matrix.category"  category="Matrix Extension" required="false" />
+  </type-modification>
+
+</synthetic>

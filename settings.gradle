@@ -1,0 +1,2 @@
+include 'angular-app'
+rootProject.name = 'matrix'

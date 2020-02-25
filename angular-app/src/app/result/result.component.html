@@ -1,0 +1,24 @@
+<p-card styleClass="ui-card-shadow">
+    <p-progressBar *ngIf="displayProgessBar" mode="indeterminate"></p-progressBar>
+    <div *ngIf="versions.length > 0" [style.font-size]="'xx-small'">Last Updated: {{ lastUpdate }}
+    </div>
+    <p-table *ngIf="versions.length > 0" [value]="versions">
+        <ng-template pTemplate="caption">
+            Versions of deployed applications per type of environment
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let col of cols">
+                    {{ col.header }}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="cols">
+            <tr>
+                <td *ngFor="let col of cols; let isFirst = first" [style.background-color]="isFirst ? '' : ( rowData[col.field] === undefined ? '': 'rgb(124,180,88)' )">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>

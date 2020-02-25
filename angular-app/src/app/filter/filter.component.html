@@ -1,0 +1,42 @@
+<p-card styleClass="ui-card-shadow">
+
+    <div class="p-grid">
+        <div class="p-col">
+            Select Applications:
+            <span class="ui-fluid">
+                <p-autoComplete
+                    [(ngModel)]="selectedApps" 
+                    [suggestions]="suggestions" 
+                    (completeMethod)="filterAppsMultiple($event)"
+                    [minLength]="1" 
+                    placeholder="Applications" 
+                    [multiple]="true" 
+                    [dropdown]="true">
+                </p-autoComplete>
+            </span>
+        </div>
+        <div class="p-col-fixed p-col-align-end" style="width:110px">
+            <p-button label="Generate" (onClick)="generate($event)"></p-button>
+        </div>
+        <div class="p-col-fixed p-col-align-end" style="width:80px">
+            <p-button label="Reset" (onClick)="reset($event)"></p-button>
+        </div>
+    </div>
+
+    <div class="p-grid">
+        <div class="p-col-12 p-md-6">
+            <div class="ui-inputgroup">
+                <p-dropdown [options]="applicationSets" [(ngModel)]="selectedApplicationSet" [autoDisplayFirst]="false" placeHolder="Choose a set" [style]="{'width':'500px'}"></p-dropdown>
+                <p-button label="Load" (onClick)="loadAppSet($event)"></p-button>
+            </div>
+        </div>
+        <div class="p-col-12 p-md-6">
+            <p-toast></p-toast>
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Enter a name" [(ngModel)]="nameSet"/>
+                <p-button label="Save" (onClick)="save($event)"></p-button>
+            </div>
+        </div>
+    </div>
+
+</p-card>
