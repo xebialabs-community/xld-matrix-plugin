@@ -1,6 +1,6 @@
 language: java
 install:
-  - angular-app/npm install
+  - angular-app/install.sh
 script:
   - "./gradlew clean build"
 deploy:
