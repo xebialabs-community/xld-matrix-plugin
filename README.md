@@ -18,7 +18,9 @@ See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for b
 
 ## Overview
 
-The XL Deploy Matrix extension enables you to know which versions of applications are deployed. 
+The XL Deploy Matrix extension enables you to know which versions of applications are deployed.
+
+![MatrixUI screenshot](images/matrixUI.png)
 
 ## Requirements
 
@@ -38,7 +40,7 @@ Three new items are available in the Configuration section in the matrix menu:
 
 - category
 
-A category is used to categorize an environment. Just set a name, then associate a category to the environment you want to be displayed in the report.
+A category is used to categorize an environment. Set a name, then associate a category to the environment you want to be displayed in the report.
 ![Category screenshot](images/environment.png)
 The category name is used for the header of the report.
 
@@ -58,8 +60,6 @@ The Matrix report is available in the "Matrix" tab.
 - Select applications using the dropdown select.
 - Press the "Generate" button to build the report.
 - You can save your configuration: enter a name and press the "Save" button.
-- To load a configfuration, select one and press the "Load" button.
+- To load a configuration, select one and press the "Load" button.
 - The "Reset" button clear all selections.
-
-![MatrixUI screenshot](images/matrixUI.png)
 
