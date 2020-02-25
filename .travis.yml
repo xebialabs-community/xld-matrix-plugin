@@ -1,4 +1,5 @@
 language: java
+script: gradlew clean build
 deploy:
   provider: releases
   api_key:
