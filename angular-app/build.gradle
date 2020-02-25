@@ -3,7 +3,7 @@ plugins {
 }
 
 task copyDist(type: Copy, group: 'Custom', description: 'Copy angular files to web directory') {
-    dependsOn npm_run_prod
+    // dependsOn npm_run_prod
     from './dist/'
     into './../build/resources/main/web/matrix'
 }
