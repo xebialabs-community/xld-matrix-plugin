@@ -1,7 +1,12 @@
 language: java
-
 install:
-  - angular-app/npm install
-
+- angular-app/npm install
 script:
-  - ./gradlew clean build
+- "./gradlew clean build"
+deploy:
+  provider: releases
+  api_key:
+    secure: jUl6TP3gQey1KdhpkB/62EkapeWC8KWXHQPFsQFtISFrxAWRzVUhvorVEifDYyUd3avI1IQ23lWhUrZEO+tmebHSaf2NslUR6fPNHMbm40qwR6JBhTv1jK4JLoPCnmnGugwUHgDbvJYEVoJTeAgjEoS8I5uZA/u20TawbRAHUWUVxpLBh6GH620ULz6L2KJXAGnQlLPoCHxM0hLCdU8/3oklXOua/uiswAmZikDWcAKEfhTXAnsFMrm8gEuqTZ4dkzSXf33BgI6KcdLjwTAzG8enTxDgfozGOuW4tGL6VxZV5zgfw9opc2PGlslCfR3i0NYCpGZgwLLMrw4VeEQ51sKzQRIaXs2E/x2CZdf6hDAqmrFeFiQtifrZ2TNycTAOG8aNBcZS8g5B7CCVw/HN4MaKRV+JebnjQ8OKQLq+Zzp7aBlbwBEi6W/DbX+nfksSjFr1V5u4zAzJ0YESFrFPgjTKbmk+PvASXf1dw8BoVu5aSMEg3Owcw4wR5Dn8pJ6br+VybjJDk3itubYqW95OPg6WopU1KF38qyXfIay1qFxBTgEbFgFWbX5XbE5DfRN64qqzcV47CkJbJLIkgU4FjGKRgJDucPG+lDoZppaoMglYBZlPXUQxRmQbONlQlILb5wpjx6FKaieLwytlQkBNYMhFSfsyhjUSJVynI/H63BE=
+  file: build/distributions/matrix-1.0.0.xldp
+  on:
+    repo: xebialabs-community/xld-matrix-plugin
