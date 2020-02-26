@@ -9,6 +9,13 @@
 #
 
 path = request.query["path"]
-appSet = repositoryService.read(path)
-applications = [item.id for item in appSet.applications]
-response.entity = {'id': appSet.id, 'applications': applications}
+if path:
+    exists = repositoryService.exists(path)
+    if exists:
+        appSet = repositoryService.read(path)
+        applications = [item.id for item in appSet.applications]
+        response.entity = {'id': appSet.id, 'applications': applications}
+    else:
+        response.entity = {'id': '', 'applications': []}
+else:
+    response.entity = {'id': '', 'applications': []}

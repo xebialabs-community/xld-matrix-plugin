@@ -34,7 +34,7 @@
             <p-toast></p-toast>
             <div class="ui-inputgroup">
                 <input type="text" pInputText placeholder="Enter a name" [(ngModel)]="nameSet"/>
-                <p-button label="Save" (onClick)="save($event)"></p-button>
+                <p-button label="Save" (onClick)="save($event)" [disabled]="selectedApps.length<1"></p-button>
             </div>
         </div>
     </div>

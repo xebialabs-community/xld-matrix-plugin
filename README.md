@@ -1,4 +1,4 @@
-# XL Deploy Matrix plugin v1.0.0
+# XL Deploy Matrix plugin
 
 [![Build Status][matrix-travis-image]][matrix-travis-url]
 [![License: MIT][matrix-license-image]][matrix-license-url]
@@ -63,3 +63,7 @@ The Matrix report is available in the "Matrix" tab.
 - To load a configuration, select one and press the "Load" button.
 - The "Reset" button clear all selections.
 
+## Versions
+
+- v1.0.0: initial release
+- v1.0.1: bug fixes
