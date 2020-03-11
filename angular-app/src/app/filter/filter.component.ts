@@ -48,7 +48,7 @@ export class FilterComponent implements OnInit, OnDestroy {
   filterAppsMultiple(event: any): void {    
     this.appSubscription = this.dataService.loadApps().subscribe(
       (data: Array<String>) => {
-        this.suggestions = data.filter(app => app.includes(event.query))
+        this.suggestions = data.filter(app => app.toLowerCase().includes(event.query.toLowerCase()))
       }
     )
   }

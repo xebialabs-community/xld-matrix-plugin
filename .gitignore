@@ -6,3 +6,4 @@ supervisord.*
 angular-app/build
 angular-app/node_modules
 xebialabs
+.scannerwork

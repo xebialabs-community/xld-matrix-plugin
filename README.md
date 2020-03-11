@@ -67,3 +67,4 @@ The Matrix report is available in the "Matrix" tab.
 
 - v1.0.0: initial release
 - v1.0.1: bug fixes
+- v1.0.2: search is now case insensitive
